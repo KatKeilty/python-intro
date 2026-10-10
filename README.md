@@ -145,7 +145,7 @@ So, we have the installation done, and we have created our venv. To activate, us
 
 ## Notebook No.1
 
-*Button alert, pick your poison. Jupyter in the browser requires some mods to have dark mode (I am a vitamin D deficient nerd and this is critical for me), and in my opinion, has more button click-throughs than an editor like Zed or VS Code.*
+*Button alert, pick your poison. Jupyter in the browser requires some mods to have dark mode (I am a vitamin D deficient nerd and this is critical for me), and in my opinion, has more button click-throughs than VS Code.*
 
 ### Pick your path
 
