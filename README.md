@@ -53,3 +53,20 @@ sudo apt install python3 python-is-python3
 ```
 The pyhtin-is-python3 will make sure python points to python3.
 
+## Create a directory 
+You've installed python! Now what? Well, most people start with jupyter notebooks. They are files with an .ipynb extension, and like all files, you need a place to put them. 
+
+Back to the terminal - you can also use the terminal in VSCode or Zed, if you want a GUI experience. At this point, I normally do. In both, this is how to open the terminal.
+```bash
+ctrl+shift+`
+```
+Usually your terminal opens on your home directory under your user. To get beck here at any time you can use `cd ~` cd is how we navigate in the terminal (change directory). If you want your directory (folder) here, then stay here to create it, otherwise navigate to where you want it. 
+```bash
+cd chosen-folder
+cd "folder with spaces"
+cd .. --go up a level
+
+mkdir -p python-intro notebooks
+cd notebooks
+```
+Now you have a directory and you are in the notebook directory.
