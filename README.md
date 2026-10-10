@@ -67,11 +67,46 @@ cd "folder with spaces"
 cd .. --go up a level
 
 mkdir -p python-intro notebooks
-cd notebooks
 ```
-Now you have a directory and you are in the notebook directory.
+Now you have a root directory (python-intro) and a directory for your notebooks.
 
-# references
+## Create a Virtual Environment
+To keep alll of the dependancies in order, we will create a virtual environment. 
+```
+python -m venv notebooks
+```
+I am on Ubuntu, if you are as well, you may get this message:
+```
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt install python3.14-venv
+```
+Generally, you are not the root users, so you need to add sudo. Usually, after adding a package it is a good idea to run an apt upgrade.
+```
+sudo apt install python3.14-venv
+sudo apt update && upgrade
+```
+Type y to accept updates
+Once you have created the venv, you might wonder, where it is?
+Look at the directory you created! You should now see several new folders and files:
+```
+python-intro
+    +--/bin
+    +--/include
+    +--/lib
+    +--/lib64
+    +--/notebooks
+    pyenv.cfg
+
+
+
+## Notebook No.1
+
+
+
+# References
 - https://python.land/installing-python
 - https://computingforgeeks.com/basic-linux-terminal-shortcuts-cheat-sheet/
 
