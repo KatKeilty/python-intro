@@ -297,6 +297,7 @@ To stop the server, go back to the terminal and press `ctrl+c`, then `y` to conf
 - [VSCode](https://code.visualstudio.com/)
 - [Linux Echo file](https://linuxvox.com/blog/linux-echo-file/)
 - [Source in Linux](https://linuxvox.com/blog/source-in-linux/)
+- [Lots of options compared to VSCode](https://alternativeto.net/software/visual-studio-code/?platform=linux)
 
 ## AI Use
 
