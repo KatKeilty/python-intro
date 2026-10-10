@@ -141,12 +141,12 @@ pip install ipykernel
 python -m ipykernel install --user --name pyintro --display-name "python-intro"
 touch zed-nb-1.py
 ```
-- Open `zed-nb-1.py` and type 
+- Open `zed-nb-1.py` and type:
 ```
 # Fist Zed Run
 print("Hello World")
 ```
-- Select the text and hit `ctrl+shit+p` to open the cmd pallete and type to select "repl: run"
+- Select the text and hit `ctrl+shift+p` to open the cmd pallete and type to select "repl: run"
 - You should see a new block with "Hello World" printed.
 
 Now you have your kernel running and a .py for your code. You can execute your code via cmd pallet (`ctrl+shit+p`) and seleting repl: run. To add comments use # before the comment on a new line.
@@ -155,8 +155,17 @@ In this path, you may deactivate the .venv and you wont have to start it again, 
 
 ### VSCode
 - VScode uses `code . ` to launch
-- - To open your terminal in Zed or VSCode, use ``` ctrl+shit+` ```
-
+- To open your terminal in Zed or VSCode, use ``` ctrl+shit+` ```
+- add your notebook to the notebooks directory `touch vscode-nb-1.ipynb`
+- Open it in the editor
+- Select the `+ Code` button and type this in the first block
+- Select the kernel python-intro from the environment options
+- Set the code block to "Python" using the selection in the bottom right corner
+```
+# Fist VSCode Run
+print("Hello World")
+``
+- here, you may be prompter to add extentions if you hav't before. Jupyter & Python come from Microsoft and are safe to install.
 
 ### Bash & browser path
 If you stayed in the terminal, congratulations, you are super cool! You will need to create the notebook and populate it as a json to open it in the browser. Type `jupyter notebook` to open the jupyter interfac in your browser.
