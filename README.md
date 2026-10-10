@@ -155,7 +155,7 @@ So, we have the installation done, and we have created our venv. To activate, us
 | Extra installs | `ipykernel` + kernel | 2 extensions | `notebook` package |
 | Launch | `zed .` | `code .` | `jupyter notebook` |
 | Run a block | `repl: run` in the command palette | Play button | `shift+enter` |
-| Kernel | `python-intro` | `.venv` or `python-intro` | `python-intro` |
+| Kernel | `python-intro` | `.venv` or `python-intro` | `Python 3 (ipykernel)` or `python-intro` |
 
 ### Bash to Editor Paths
 
@@ -236,7 +236,7 @@ This should output a path ending in `python-intro/.venv/bin/python`.
 - Option 3: create a non-empty notebook from the CLI:
 
 ```bash
-echo '{"cells":[{"cell_type":"code","execution_count":null,"metadata":{},"outputs":[],"source":[]}],"metadata":{"kernelspec":{"name":"pyintro","display_name":"python-intro","language":"python"}},"nbformat":4,"nbformat_minor":5}' > notebooks/vscode-nb-1.ipynb
+echo '{"cells":[{"cell_type":"code","execution_count":null,"metadata":{},"outputs":[],"source":[]}],"metadata":{"kernelspec":{"name":"pyintro","display_name":"python-intro","language":"python"}},"nbformat":4,"nbformat_minor":4}' > notebooks/vscode-nb-1.ipynb
 ```
 
 Notebooks are JSON under the hood, so this creates the file where you want it in the directory, with the kernel name already filled in. (fewer buttons = good)
@@ -252,15 +252,42 @@ When you click the "Play" button to run the code, you will see the command palet
 
 ### Bash & browser path
 
-If you stayed in the terminal, congratulations, you are super cool! You will need to create the notebook and populate it as JSON to open it in the browser. Install the notebook package in your venv:
+#### Install and open Jupyter in the browser
+
+If you stayed in the terminal, congratulations, you are super cool! Install the notebook package in your venv:
 
 ```bash
 pip install notebook
+cd notebooks  # if not already there
+```
+
+Check which Jupyter you are about to launch. The path should contain `.venv`:
+
+```bash
+which jupyter
 ```
 
 Then type `jupyter notebook` to open the Jupyter interface in your browser.
 
-# References
+#### Create your notebook and run your first code in the browser
+
+A kernel is the program that actually runs your code. The notebook is just the front end, which is why Zed, VS Code, and the browser can all share the same kernel.
+
+In the browser, click New in the top right. Under "Notebook:" you will see two kernels. `Python 3 (ipykernel)` is the default that installing `ipykernel` adds inside your venv, and it relies on your venv being active when you launch Jupyter. `python-intro` is the one you registered, and it stores the full path to your venv's Python, so it works with the venv off. Either one is fine here.
+
+- Pick a kernel to open a new notebook, and type this in the first cell:
+
+```python
+# First Browser Run
+print("Hello World")
+```
+
+- Press `shift+enter` to run the cell. The output appears below it.
+- To skip the New menu, create the file with the echo method above (run from `python-intro`), then click it in the file list.
+
+To stop the server, go back to the terminal and press `ctrl+c`, then `y` to confirm.
+
+## References
 
 - https://python.land/installing-python
 - https://computingforgeeks.com/basic-linux-terminal-shortcuts-cheat-sheet/
