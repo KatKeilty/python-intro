@@ -116,6 +116,17 @@ python-intro
 So, we have the installation done, and we have created our venv. To activate use `source .venv/bin/activate`, you can see this file in the directory. Once you have activated your venv, your cmd line path will show (.venv) in front of it. something like `(.venv) user@computer:~/python-intro$`. To deactivate, simpley type `deactivate` nothing fancy needed.
 
 ## Notebook No.1
+*Button alert, pick your poison. Jupyter in the browser requires some mods to have dark mode (I am a vitamin-d deficient nerd and this is critical for me), and in my opinion, has more button click-throughs than an editor like Zed or VScode*
+
+### Bash to Editor
+Confirm with `pwd` you are still in python-intro, or python-intro/notebooks if you only want to see the notebooks in the editor.
+- Zed uses `zed --classic` to launch, but I typed in zed . and it prompted me to add that as an alternate as well
+- VScode uses `code . ` to launch
+
+
+### Bash & browser
+If you stayed in the terminal, congratulations, you are super cool! You will need to create the notebook and populate it as a json to open it in the browser. Type `jupyter notebook` to open the jupyter interfac in your browser.
+
 
 
 
