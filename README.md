@@ -151,6 +151,8 @@ print("Hello World")
 
 Now you have your kernel running and a .py for your code. You can execute your code via cmd pallet (`ctrl+shit+p`) and seleting repl: run. To add comments use # before the comment on a new line.
 
+In this path, you may deactivate the .venv and you wont have to start it again, the kernal uses it, it is a statis file, so there is no additional deactivation there. Try it yourself, `deactivate` and run the code.
+
 ### VSCode
 - VScode uses `code . ` to launch
 - - To open your terminal in Zed or VSCode, use ``` ctrl+shit+` ```
