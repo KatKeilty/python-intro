@@ -289,13 +289,14 @@ To stop the server, go back to the terminal and press `ctrl+c`, then `y` to conf
 
 ## References
 
-- https://python.land/installing-python
-- https://computingforgeeks.com/basic-linux-terminal-shortcuts-cheat-sheet/
-- https://pypi.org/project/ipykernel/
-- https://jupyter.org/
-- https://zedhub.dev/repl
-- https://code.visualstudio.com/
-- https://linuxvox.com/blog/linux-echo-file/
+- [Installing Python](https://python.land/installing-python)
+- [Basic Linux Terminal Shortcuts](https://computingforgeeks.com/basic-linux-terminal-shortcuts-cheat-sheet/)
+- [ipykernel](https://pypi.org/project/ipykernel/)
+- [Jupyter Notebooks](https://jupyter.org/)
+- [Zed repl](https://zedhub.dev/repl)
+- [VSCode](https://code.visualstudio.com/)
+- [Linux Echo file](https://linuxvox.com/blog/linux-echo-file/)
+- [Source in Linux](https://linuxvox.com/blog/source-in-linux/)
 
 ## AI Use
 
