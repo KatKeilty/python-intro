@@ -39,4 +39,17 @@ Try:
 
 ```bash
 python3 --version
+```
+For me, this returns:
+```bash
+Python 3.14.4
+```
+
+### Install Python
+
+If you do not have a current install, use:
+```bash
+sudo apt install python3 python-is-python3
+```
+The pyhtin-is-python3 will make sure python points to python3.
 
