@@ -5,23 +5,26 @@ A hands-on introduction to Python, from installing it to writing your first prog
 
 ## Who this tutorial is for
 
-This tutorial is for beginners. You don’t need any previous programming experience. It is for those who prefer a written, interactive experience, as well as a focus on cli practice. You can find many videos, online apps, courses etc. but this is the dead-simple toutorial I would have wanted starting out, because I just hate buttons. 
+This tutorial is for beginners. You don't need any previous programming experience. It is for those who prefer a written, interactive experience, as well as a focus on CLI practice. You can find many videos, online apps, courses, etc., but this is the dead-simple tutorial I would have wanted starting out, because I just hate buttons.
 
-### My personal case for cli focused methods
+### My personal case for CLI-focused methods
 
-Buttons seem like the easy way, GUI seems like the easy way, videos and AI seem like the easy way. But the comfort and predictibility that come from basic cli operation become so much easier once you practice. 
+Buttons seem like the easy way, GUI seems like the easy way, videos and AI seem like the easy way. But the comfort and predictability that come from basic CLI operation become so much easier once you practice.
 
 For example, to create a file:
-cli: `touch "file1"` 
-gui: right click>select add file>type in file1
 
-I know, hot keys and usinf copy paste functions can help, and theres no reason to avoid gui entirely. However, the cli is a basic skill tht allows you to understand the logic in a tool agnostic way, it is easier to learn programs when you actually understand the underlying code, but also the structure. 
+- CLI: `touch "file1"`
+- GUI: right click > select add file > type in file1
+
+I know, hot keys and using copy and paste functions can help, and there's no reason to avoid GUI entirely. However, the CLI is a basic skill that allows you to understand the logic in a tool-agnostic way. It is easier to learn programs when you actually understand the underlying code, but also the structure.
 
 ### Another personal opinion regarding FOSS
-We use Microsoft and Google every day, and everything we do runs on AWS or Azure- there is no way to escape the giants dominating the landscape, and no reason not to enjoy the fabulous tech they create. All of these companys also support open source initiatives and champion young technologies through investment and development. 
-However, it can be easy to get tunnel vision- so I think it is important to encourage diverse systems, competition, and open-source. The implications go beyond tech and are something everyone should educate themselves about. The easiest way to do this toutorial is using VSCode, but you can follow the terminal to browser or Zed path for a different flavor.
 
-## What you’ll need
+We use Microsoft and Google every day, and everything we do runs on AWS or Azure. There is no way to escape the giants dominating the landscape, and no reason not to enjoy the fabulous tech they create. All of these companies also support open source initiatives and champion young technologies through investment and development.
+
+However, it can be easy to get tunnel vision, so I think it is important to encourage diverse systems, competition, and open source. The implications go beyond tech and are something everyone should educate themselves about.
+
+## What you'll need
 
 - A PC running Linux
 - A terminal or command prompt
@@ -41,11 +44,10 @@ However, it can be easy to get tunnel vision- so I think it is important to enco
 ### Open a terminal
 
 - Open your terminal application.
-    -Tip: check your settings> keyboard> shortcuts> launcher settings, for me, I can use `super+x` to launch terminal
-    - GUI users look for this icon:
+  - Tip: check your settings > keyboard > shortcuts > launcher settings. For me, I can use `super+x` to launch the terminal.
+  - GUI users look for this icon:
 
-        ![Terminal showing the project files](public/screenshots/terminalicon.png)
-
+    ![Terminal showing the project files](public/screenshots/terminalicon.png)
 
 ### Check whether Python is installed
 
@@ -54,146 +56,234 @@ Try:
 ```bash
 python3 --version
 ```
+
 For me, this returns:
-```bash
+
+```text
 Python 3.14.4
 ```
 
 ### Install Python
 
 If you do not have a current install, use:
+
 ```bash
 sudo apt install python3 python-is-python3
 sudo apt update && sudo apt upgrade
 ```
-The pyhton-is-python3 will make sure python points to python3. Updating and upgrading ensures the rest of your system doesn't miss dependencies based on the new install.
 
-## Create a directory 
-You've installed python! Now what? Well, most people start with jupyter notebooks. They are files with an .ipynb extension, and like all files, you need a place to put them. 
+The `python-is-python3` package will make sure `python` points to `python3`. Updating and upgrading ensures the rest of your system doesn't miss dependencies based on the new install.
 
-Back to the terminal - you can also use the terminal in VSCode or Zed, if you want a GUI experience. At this point, I normally do. In both, this is how to open the terminal.
-```bash
-ctrl+shift+`
-```
-Usually your terminal opens on your home directory under your user. To get beck here at any time you can use `cd ~` cd is how we navigate in the terminal (change directory). If you want your directory (folder) here, then stay here to create it, otherwise navigate to where you want it. 
+## Create a directory
+
+You've installed Python! Now what? Well, most people start with Jupyter notebooks. They are files with an `.ipynb` extension, and like all files, you need a place to put them.
+
+Back to the terminal. You can also use the terminal in VS Code or Zed, if you want a GUI experience. At this point, I normally do. In both, this is how to open the terminal:
+
+``ctrl+shift+` ``
+
+Usually your terminal opens on your home directory under your user. To get back here at any time you can use `cd ~`. `cd` is how we navigate in the terminal (change directory). If you want your directory (folder) here, then stay here to create it, otherwise navigate to where you want it.
+
 ```bash
 cd chosen-folder
 cd "folder with spaces"
-cd .. --go up a level
-
-mkdir -p python-intro notebooks
+cd ..  # go up a level
 ```
-Now you have a root directory (python-intro) and a directory for your notebooks.
+
+Then create your project folder with a notebooks folder inside it, and move into it:
+
+```bash
+mkdir -p python-intro/notebooks
+cd python-intro
+```
+
+The `-p` flag creates `python-intro` first if it does not exist yet. Now you have a root directory (`python-intro`) and a directory for your notebooks.
 
 ## Create a Virtual Environment
-To keep alll of the dependancies in order, we will create a virtual environment. 
-```
+
+To keep all of the dependencies in order, we will create a virtual environment.
+
+```bash
 python -m venv .venv
 ```
-I am on Ubuntu, if you are as well, you may get this message:
-```
+
+I am on Ubuntu. If you are as well, you may get this message:
+
+```text
 The virtual environment was not created successfully because ensurepip is not
 available.  On Debian/Ubuntu systems, you need to install the python3-venv
 package using the following command.
 
     apt install python3.14-venv
 ```
-Generally, you are not the root users, so you need to add sudo. Usually, after adding a package it is a good idea to run an apt upgrade.
-```
+
+Generally, you are not the root user, so you need to add `sudo`. Usually, after adding a package it is a good idea to run an apt upgrade.
+
+```bash
 sudo apt install python3.14-venv
 sudo apt update && sudo apt upgrade
 ```
-Type y to accept updates
-Once you have created the venv, you might wonder, where is it?
-When you ran the cmd, it created several new folders and filesn now you directory should look more like this:
-```
+
+Type `y` to accept updates. Then run `python -m venv .venv` again.
+
+Once you have created the venv, you might wonder, where is it? When you ran the cmd, it created several new folders and files, and now your directory should look more like this:
+
+```text
 python-intro
-    --./venv
-            +--/bin
-            +--/include
-            +--/lib
-            +--/lib64
-            pyenv.cfg
-    +--/notebooks
+├── .venv
+│   ├── bin
+│   ├── include
+│   ├── lib
+│   ├── lib64
+│   └── pyvenv.cfg
+└── notebooks
 ```
+
 ### Activate your venv
-So, we have the installation done, and we have created our venv. To activate use `source .venv/bin/activate`, you can see this file in the directory. Once you have activated your venv, your cmd line path will show (.venv) in front of it. something like `(.venv) user@computer:~/python-intro$`. To deactivate, simpley type `deactivate` nothing fancy needed.
+
+So, we have the installation done, and we have created our venv. To activate, use `source .venv/bin/activate`. You can see this file in the directory. Once you have activated your venv, your command line path will show (.venv) in front of it, something like `(.venv) user@computer:~/python-intro$`. To deactivate, simply type `deactivate`. Nothing fancy needed.
 
 ## Notebook No.1
-*Button alert, pick your poison. Jupyter in the browser requires some mods to have dark mode (I am a vitamin-d deficient nerd and this is critical for me), and in my opinion, has more button click-throughs than an editor like Zed or VScode*
+
+*Button alert, pick your poison. Jupyter in the browser requires some mods to have dark mode (I am a vitamin D deficient nerd and this is critical for me), and in my opinion, has more button click-throughs than an editor like Zed or VS Code.*
+
+### Pick your path
+
+| | Zed | VS Code | Browser |
+|---|---|---|---|
+| File type | `.py` | `.ipynb` | `.ipynb` |
+| Extra installs | `ipykernel` + kernel | 2 extensions | `notebook` package |
+| Launch | `zed .` | `code .` | `jupyter notebook` |
+| Run a block | `repl: run` in the command palette | Play button | `shift+enter` |
+| Kernel | `python-intro` | `.venv` or `python-intro` | `python-intro` |
 
 ### Bash to Editor Paths
-Confirm with `pwd` you are still in python-intro, or python-intro/notebooks if you only want to see the notebooks in the editor.
+
+Confirm with `pwd` that you are still in `python-intro`, or in `python-intro/notebooks` if you only want to see the notebooks in the editor.
+
 #### Zed
-* Zed currently has limited support for notebooks, but allows you to use repl to run code in a .py (instead of .ipynb) - for learning, this is a great way to see what are essentially notebooks without the fancy skin*
 
-- Zed uses `zed --classic` to launch, but I typed in zed . and it prompted me to add that as an alternate as well
-- To open your terminal in Zed or VSCode, use ``` ctrl+shit+` ```
+##### Open & set up Zed from the terminal
 
-In zed, we will use a .py file, not a notebook file. Zed does not have native notebook support, but it does have repl- which will allow us to run our code in a similar way. To run repl on code, we need a jupyter kernal as well as our venv. 
-Check that you still see (.venv) in your cmd line, if not, activate it again with source `.venv/bin/activate`.
-```
+*Zed currently has limited support for notebooks, but allows you to use REPL to run code in a .py (instead of .ipynb). For learning, this is a great way to see what are essentially notebooks without the fancy skin.*
+
+- Zed uses `zed --classic` to launch, but I typed in `zed .` and it prompted me to add that as an alternate as well
+- To open your terminal in Zed or VS Code, use ``ctrl+shift+` ``
+
+In Zed, we will use a .py file, not a notebook file. Zed does not have native notebook support, but it does have REPL, which will allow us to run our code in a similar way. To run REPL on code, we need a Jupyter kernel as well as our venv.
+
+Check that you still see (.venv) in your command line. If not, activate it again with `source .venv/bin/activate`.
+
+```bash
 which python
 ```
-This should output your python-intro/.venv/bin/python path
-```
+
+This should output a path ending in `python-intro/.venv/bin/python`.
+
+```bash
 pip install ipykernel
 python -m ipykernel install --user --name pyintro --display-name "python-intro"
+```
+
+##### Create your notebook and run your first code in Zed
+
+```bash
 touch zed-nb-1.py
 ```
+
 - Open `zed-nb-1.py` and type:
-```
-# Fist Zed Run
+
+```python
+# First Zed Run
 print("Hello World")
 ```
-- Select the text and hit `ctrl+shift+p` to open the cmd pallete and type to select "repl: run"
+
+- Select the text and hit `ctrl+shift+p` to open the command palette, then type to select "repl: run".
 - You should see a new block with "Hello World" printed.
 
-Now you have your kernel running and a .py for your code. You can execute your code via cmd pallet (`ctrl+shit+p`) and seleting repl: run. To add comments use # before the comment on a new line.
+Now you have your kernel running and a .py for your code. You can execute your code via the command palette (`ctrl+shift+p`) and selecting `repl: run`. To add comments, use `#` before the comment on a new line.
 
-In this path, you may deactivate the .venv and you wont have to start it again, the kernal uses it, it is a statis file, so there is no additional deactivation there. Try it yourself, `deactivate` and run the code.
+In this path, you may deactivate the .venv and you won't have to start it again. The kernel uses it, and it is a static file, so there is no additional deactivation there. Try it yourself: `deactivate`, then run the code.
 
-### VSCode
-- VScode uses `code . ` to launch
-- To open your terminal in Zed or VSCode, use ``` ctrl+shit+` ```
-- add your notebook to the notebooks directory `touch vscode-nb-1.ipynb`
-- Open it in the editor
-- Select the `+ Code` button and type this in the first block
-- Select the kernel python-intro from the environment options
-- Set the code block to "Python" using the selection in the bottom right corner
+#### VS Code
+
+##### Open VS Code & set up from the terminal
+
+- VS Code uses `code .` to launch
+- To open your terminal in Zed or VS Code, use ``ctrl+shift+` ``
+
+*To use notebooks in VS Code, you need extensions. To install these extensions, you can wait to be prompted in the GUI when running the code, or use your terminal:*
+
+```bash
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-python.python
 ```
-# Fist VSCode Run
+
+Check that you still see (.venv) in your command line. If not, activate it again with `source .venv/bin/activate`.
+
+```bash
+which python
+```
+
+This should output a path ending in `python-intro/.venv/bin/python`.
+
+##### Create your notebook and run your first code in VS Code
+
+*Button alert: creating from the command palette creates an untitled .ipynb, which you will then need to save via the file explorer, which will open in your ~ home directory. Our `touch` method also will not create the first block. See the echo method to blend the best of both worlds.*
+
+- Option 1: add your notebook to the notebooks directory. Press `ctrl+shift+p` to open the command palette and search for "Create: New Jupyter Notebook".
+- Option 2: the method we used for Zed, `touch vscode-nb-1.ipynb`, will create the file but it will not start with a "starter block" and you will have to add the first code block.
+- Option 3: create a non-empty notebook from the CLI:
+
+```bash
+echo '{"cells":[{"cell_type":"code","execution_count":null,"metadata":{},"outputs":[],"source":[]}],"metadata":{"kernelspec":{"name":"pyintro","display_name":"python-intro","language":"python"}},"nbformat":4,"nbformat_minor":5}' > notebooks/vscode-nb-1.ipynb
+```
+
+Notebooks are JSON under the hood, so this creates the file where you want it in the directory, with the kernel name already filled in. (fewer buttons = good)
+
+- Open the notebook in the editor and type this in the first block:
+
+```python
+# First VS Code Run
 print("Hello World")
-``
-- here, you may be prompter to add extentions if you hav't before. Jupyter & Python come from Microsoft and are safe to install.
+```
+
+When you click the "Play" button to run the code, you will see the command palette open with your .venv to select. This will connect your environment to the notebook.
 
 ### Bash & browser path
-If you stayed in the terminal, congratulations, you are super cool! You will need to create the notebook and populate it as a json to open it in the browser. Type `jupyter notebook` to open the jupyter interfac in your browser.
 
+If you stayed in the terminal, congratulations, you are super cool! You will need to create the notebook and populate it as JSON to open it in the browser. Install the notebook package in your venv:
 
+```bash
+pip install notebook
+```
 
+Then type `jupyter notebook` to open the Jupyter interface in your browser.
 
 # References
+
 - https://python.land/installing-python
 - https://computingforgeeks.com/basic-linux-terminal-shortcuts-cheat-sheet/
 - https://pypi.org/project/ipykernel/
 - https://jupyter.org/
 - https://zedhub.dev/repl
 - https://code.visualstudio.com/
+- https://linuxvox.com/blog/linux-echo-file/
 
 ## AI Use
 
+```text
+Copilot Code and Claude chat were used for brainstorming and formatting/proofing materials in this repo. None of the content originated from these programs, and everything was reviewed by me, a human.
+
+Content generated from AI will be marked (I frequently use it for translation purposes).
 ```
-Copilot Code and Claude chat were used for brainstorming and formatting/proofing materials in this repo. None of the content originated from these programs, and everything was reviewed by me- a human
 
-Conetent generated from AI will be marked (I frequently use it for translation purposes)
-```
-### MIT License
+## MIT License
 
-    Copyright (c) <year> <copyright holder>
+Copyright (c) 2026 Kat Keilty
 
-    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
