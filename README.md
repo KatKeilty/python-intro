@@ -5,7 +5,17 @@ A hands-on introduction to Python, from installing it to writing your first prog
 
 ## Who this tutorial is for
 
-This tutorial is for beginners. You don’t need any previous programming experience.
+This tutorial is for beginners. You don’t need any previous programming experience. It is for those who prefer a written, interactive experience, as well as a focus on cli practice. You can find many videos, online apps, courses etc. but this is the dead-simple toutorial I would have wanted starting out, because I just hate buttons. 
+
+### My personal case for cli focused methods
+
+Buttons seem like the easy way, GUI seems like the easy way, videos and AI seem like the easy way. But the comfort and predictibility that come from basic cli operation become so much easier once you practice. 
+
+For example, to create a file:
+cli: `touch "file1"` 
+gui: right click>select add file>type in file1
+
+I know, hot keys and usinf copy paste functions can help, and theres no reason to avoid gui entirely. However, the cli is a basic skill tht allows you to understand the logic in a tool agnostic way, it is easier to learn programs when you actually understand the underlying code, but also the structure. 
 
 ## What you’ll need
 
@@ -50,8 +60,9 @@ Python 3.14.4
 If you do not have a current install, use:
 ```bash
 sudo apt install python3 python-is-python3
+sudo apt update && sudo apt upgrade
 ```
-The pyhton-is-python3 will make sure python points to python3.
+The pyhton-is-python3 will make sure python points to python3. Updating and upgrading ensures the rest of your system doesn't miss dependencies based on the new install.
 
 ## Create a directory 
 You've installed python! Now what? Well, most people start with jupyter notebooks. They are files with an .ipynb extension, and like all files, you need a place to put them. 
@@ -73,7 +84,7 @@ Now you have a root directory (python-intro) and a directory for your notebooks.
 ## Create a Virtual Environment
 To keep alll of the dependancies in order, we will create a virtual environment. 
 ```
-python -m venv notebooks
+python -m venv .venv
 ```
 I am on Ubuntu, if you are as well, you may get this message:
 ```
@@ -86,21 +97,23 @@ package using the following command.
 Generally, you are not the root users, so you need to add sudo. Usually, after adding a package it is a good idea to run an apt upgrade.
 ```
 sudo apt install python3.14-venv
-sudo apt update && upgrade
+sudo apt update && sudo apt upgrade
 ```
 Type y to accept updates
-Once you have created the venv, you might wonder, where it is?
-Look at the directory you created! You should now see several new folders and files:
+Once you have created the venv, you might wonder, where is it?
+When you ran the cmd, it created several new folders and filesn now you directory should look more like this:
 ```
 python-intro
-    +--/bin
-    +--/include
-    +--/lib
-    +--/lib64
+    --./venv
+            +--/bin
+            +--/include
+            +--/lib
+            +--/lib64
+            pyenv.cfg
     +--/notebooks
-    pyenv.cfg
-
-
+```
+### Activate your venv
+So, we have the installation done, and we have created our venv. To activate use `source .venv/bin/activate`, you can see this file in the directory. Once you have activated your venv, your cmd line path will show (.venv) in front of it. something like `(.venv) user@computer:~/python-intro$`. To deactivate, simpley type `deactivate` nothing fancy needed.
 
 ## Notebook No.1
 
@@ -114,6 +127,8 @@ python-intro
 
 ```
 Copilot Code and Claude chat were used for brainstorming and formatting/proofing materials in this repo. None of the content originated from these programs, and everything was reviewed by me- a human
+
+Conetent generated from AI will be marked (I frequently use it for translation purposes)
 ```
 ### MIT License
 
