@@ -51,7 +51,7 @@ If you do not have a current install, use:
 ```bash
 sudo apt install python3 python-is-python3
 ```
-The pyhtin-is-python3 will make sure python points to python3.
+The pyhton-is-python3 will make sure python points to python3.
 
 ## Create a directory 
 You've installed python! Now what? Well, most people start with jupyter notebooks. They are files with an .ipynb extension, and like all files, you need a place to put them. 
@@ -70,3 +70,22 @@ mkdir -p python-intro notebooks
 cd notebooks
 ```
 Now you have a directory and you are in the notebook directory.
+
+# references
+- https://python.land/installing-python
+- https://computingforgeeks.com/basic-linux-terminal-shortcuts-cheat-sheet/
+
+## AI Use
+
+```
+Copilot Code and Claude chat were used for brainstorming and formatting/proofing materials in this repo. None of the content originated from these programs, and everything was reviewed by me- a human
+```
+### MIT License
+
+    Copyright (c) <year> <copyright holder>
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
