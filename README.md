@@ -17,6 +17,10 @@ gui: right click>select add file>type in file1
 
 I know, hot keys and usinf copy paste functions can help, and theres no reason to avoid gui entirely. However, the cli is a basic skill tht allows you to understand the logic in a tool agnostic way, it is easier to learn programs when you actually understand the underlying code, but also the structure. 
 
+### Another personal opinion regarding FOSS
+We use Microsoft and Google every day, and everything we do runs on AWS or Azure- there is no way to escape the giants dominating the landscape, and no reason not to enjoy the fabulous tech they create. All of these companys also support open source initiatives and champion young technologies through investment and development. 
+However, it can be easy to get tunnel vision- so I think it is important to encourage diverse systems, competition, and open-source. The implications go beyond tech and are something everyone should educate themselves about. The easiest way to do this toutorial is using VSCode, but you can follow the terminal to browser or Zed path for a different flavor.
+
 ## What you’ll need
 
 - A PC running Linux
@@ -118,13 +122,41 @@ So, we have the installation done, and we have created our venv. To activate use
 ## Notebook No.1
 *Button alert, pick your poison. Jupyter in the browser requires some mods to have dark mode (I am a vitamin-d deficient nerd and this is critical for me), and in my opinion, has more button click-throughs than an editor like Zed or VScode*
 
-### Bash to Editor
+### Bash to Editor Paths
 Confirm with `pwd` you are still in python-intro, or python-intro/notebooks if you only want to see the notebooks in the editor.
+#### Zed
+* Zed currently has limited support for notebooks, but allows you to use repl to run code in a .py (instead of .ipynb) - for learning, this is a great way to see what are essentially notebooks without the fancy skin*
+
 - Zed uses `zed --classic` to launch, but I typed in zed . and it prompted me to add that as an alternate as well
+- To open your terminal in Zed or VSCode, use ``` ctrl+shit+` ```
+
+In zed, we will use a .py file, not a notebook file. Zed does not have native notebook support, but it does have repl- which will allow us to run our code in a similar way. To run repl on code, we need a jupyter kernal as well as our venv. 
+Check that you still see (.venv) in your cmd line, if not, activate it again with source `.venv/bin/activate`.
+```
+which python
+```
+This should output your python-intro/.venv/bin/python path
+```
+pip install ipykernel
+python -m ipykernel install --user --name pyintro --display-name "python-intro"
+touch zed-nb-1.py
+```
+- Open `zed-nb-1.py` and type 
+```
+# Fist Zed Run
+print("Hello World")
+```
+- Select the text and hit `ctrl+shit+p` to open the cmd pallete and type to select "repl: run"
+- You should see a new block with "Hello World" printed.
+
+Now you have your kernel running and a .py for your code. You can execute your code via cmd pallet (`ctrl+shit+p`) and seleting repl: run. To add comments use # before the comment on a new line.
+
+### VSCode
 - VScode uses `code . ` to launch
+- - To open your terminal in Zed or VSCode, use ``` ctrl+shit+` ```
 
 
-### Bash & browser
+### Bash & browser path
 If you stayed in the terminal, congratulations, you are super cool! You will need to create the notebook and populate it as a json to open it in the browser. Type `jupyter notebook` to open the jupyter interfac in your browser.
 
 
@@ -133,6 +165,10 @@ If you stayed in the terminal, congratulations, you are super cool! You will nee
 # References
 - https://python.land/installing-python
 - https://computingforgeeks.com/basic-linux-terminal-shortcuts-cheat-sheet/
+- https://pypi.org/project/ipykernel/
+- https://jupyter.org/
+- https://zedhub.dev/repl
+- https://code.visualstudio.com/
 
 ## AI Use
 
