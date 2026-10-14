@@ -145,7 +145,7 @@ So, we have the installation done, and we have created our venv. To activate, us
 
 ## Notebook No.1
 
-*Button alert, pick your poison. Jupyter in the browser requires some mods to have dark mode (I am a vitamin D deficient nerd and this is critical for me), and in my opinion, has more button click-throughs than VS Code.*
+*Button alert, pick your poison. Jupyter in the browser requires some mods to have dark mode (I am a vitamin D deficient nerd and this is critical for me), and in my opinion, has more button click-throughs than an editor like Zed or VS Code.*
 
 ### Pick your path
 
@@ -289,22 +289,18 @@ To stop the server, go back to the terminal and press `ctrl+c`, then `y` to conf
 
 ## References
 
-- [Installing Python](https://python.land/installing-python)
-- [Basic Linux Terminal Shortcuts](https://computingforgeeks.com/basic-linux-terminal-shortcuts-cheat-sheet/)
-- [ipykernel](https://pypi.org/project/ipykernel/)
-- [Jupyter Notebooks](https://jupyter.org/)
-- [Zed repl](https://zedhub.dev/repl)
-- [VSCode](https://code.visualstudio.com/)
-- [Linux Echo file](https://linuxvox.com/blog/linux-echo-file/)
-- [Source in Linux](https://linuxvox.com/blog/source-in-linux/)
-- [Lots of options compared to VSCode](https://alternativeto.net/software/visual-studio-code/?platform=linux)
+- https://python.land/installing-python
+- https://computingforgeeks.com/basic-linux-terminal-shortcuts-cheat-sheet/
+- https://pypi.org/project/ipykernel/
+- https://jupyter.org/
+- https://zedhub.dev/repl
+- https://code.visualstudio.com/
+- https://linuxvox.com/blog/linux-echo-file/
 
 ## AI Use
 
 ```text
-Copilot Code and Claude chat were used for brainstorming and formatting/proofing materials in this repo. None of the content originated from these programs, and everything was reviewed by me, a human.
-
-Content generated from AI will be marked (I frequently use it for translation purposes).
+Copilot Code was used to troubleshoot commands. Claude (Anthropic) was used for brainstorming, proofreading, and formatting, and to draft some README text and command snippets.
 ```
 
 ## MIT License
